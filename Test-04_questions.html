@@ -183,7 +183,7 @@
 
     function calculateScore() {
       let correct = 0, wrong = 0;
-      for (let i = 1; i <= 150; i++) {
+      for (let i = 1; i <= 100; i++) {
         const selected = answers[i];
         const key = answerKey[i];
         const btns = document.querySelectorAll(`.question[data-q="${i}"] button`);
@@ -199,7 +199,7 @@
           }
         }
       }
-      const score = negativeMarking ? (correct * 4 - wrong) : (correct * 4);
+      const score = negativeMarking ? (correct * 3 - wrong) : (correct * 1);
       alert(`✅ Correct: ${correct}\n❌ Wrong: ${wrong}\n🎯 Score: ${score}`);
     }
 
@@ -213,7 +213,7 @@
 
     function build() {
       const c = document.getElementById("omr-sheet");
-      for (let i = 1; i <= 150; i++) {
+      for (let i = 1; i <= 100; i++) {
         const d = document.createElement("div");
         d.className = "question";
         d.dataset.q = i;
