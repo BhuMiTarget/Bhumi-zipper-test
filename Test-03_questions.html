@@ -14,7 +14,7 @@ border-radius:6px;cursor:pointer}</style></head><body>
 <button class="action-button" onclick="saveAnswers()">💾 Save</button>
 <button class="action-button" onclick="calculateScore()">🧮 Check Score</button>
 <script>
-const answers = JSON.parse(localStorage.getItem("omr_Climatology_Part-1")||"{}");
+const answers = JSON.parse(localStorage.getItem("omr_Geomorphology_Part-1")||"{}");
 let answerKey = {
   "1": "C",
   "2": "C",
@@ -118,7 +118,7 @@ let answerKey = {
   "100": "B"
 }, negativeMarking = true;
 function toggleNegativeMarking(cb){negativeMarking=cb.checked}
-function saveAnswers(){localStorage.setItem("omr_Climatology_Part-1", JSON.stringify(answers));alert("Saved!")}
+function saveAnswers(){localStorage.setItem("omr_Geomorphology_Part-1", JSON.stringify(answers));alert("Saved!")}
 function selectOption(q,opt,btn){answers[q]=opt;
 document.querySelectorAll(`.question[data-q="${q}"] button`).forEach(b=>b.classList.remove('selected'));
 btn.classList.add('selected');}
