@@ -73,12 +73,12 @@ function selectOption(q,opt,btn){answers[q]=opt;
 document.querySelectorAll(`.question[data-q="${q}"] button`).forEach(b=>b.classList.remove('selected'));
 btn.classList.add('selected');}
 function calculateScore(){let c=0,w=0;
-for(let i=1;i<=150;i++){if(answers[i]){if(answerKey[i]&&answers[i]===answerKey[i])c++;else if(answerKey[i])w++;}}
-let s=negativeMarking?c*4-w:c*4;alert(`✅ Correct: ${c}\n❌ Wrong: ${w}\n🎯 Score: ${s}`);}
+for(let i=1;i<=50;i++){if(answers[i]){if(answerKey[i]&&answers[i]===answerKey[i])c++;else if(answerKey[i])w++;}}
+let s=negativeMarking?c*3-w:c*1;alert(`✅ Correct: ${c}\n❌ Wrong: ${w}\n🎯 Score: ${s}`);}
 function loadAnswers(){Object.keys(answers).forEach(q=>{let o=answers[q];
 let b=document.querySelector(`.question[data-q="${q}"] button:nth-child(${o.charCodeAt(0)-64})`);if(b)b.classList.add('selected');})}
 function build(){let c=document.getElementById("omr-sheet");
-for(let i=1;i<=150;i++){let d=document.createElement("div");d.className="question";d.dataset.q=i;
+for(let i=1;i<=50;i++){let d=document.createElement("div");d.className="question";d.dataset.q=i;
 d.innerHTML=`<div class="question-number">Question ${i}</div><div class="options">
 <button onclick="selectOption(${i},'A',this)">A</button><button onclick="selectOption(${i},'B',this)">B</button>
 <button onclick="selectOption(${i},'C',this)">C</button><button onclick="selectOption(${i},'D',this)">D</button></div>`;
